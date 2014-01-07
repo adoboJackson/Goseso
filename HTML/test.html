@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		$(function() {
+			$('#tester').on('click', function(){
+				console.log('CLICK');
+				$(this).animate({left: '200px', opacity: 1}, 2000);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id='tester' style='display: block; background: red; width: 100px; height: 100px; position: relative; opacity: .25'></div>
+</body>
+</html>

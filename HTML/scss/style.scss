@@ -1,0 +1,21 @@
+@import 'mixins';
+body{
+	font-family: $helvetica;
+	font-weight: 300;
+	background: $orange;
+}
+.container{
+	position: relative;
+	left: 0;
+	background: white;
+	border-radius: 10px;
+	padding: 20px;
+	@include transition(left);
+	&:hover{
+		left: 200px;
+	}
+	>p{
+		font-size: 2em;
+		color: $gray;
+	}
+}

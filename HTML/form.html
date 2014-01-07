@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple HTML Form Using FlexBox</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+	<link rel="stylesheet" type="text/css" href="css/form-style.css" />
+	<script>
+		$(function() {
+				$('#the_form').on('submit', function(e){
+					e.preventDefault();
+					/*console.log('clicked');*/
+					if( !$('#name').val() ) {
+				          $('.form-content').addClass('invalid');
+				          $('.form-content').one('webkitAnimationEnd oanimationend msAnimationEnd animationend',   
+						    function(e) {
+						    // code to execute after animation ends
+						    $('.form-content').removeClass('invalid');
+						    });
+				    }
+					
+				}
+			);
+		});
+	</script>
+</head>
+<body>
+	<div class='container'>
+		<header><h1>This is the form</h1></header>
+		<div class='form-content'>
+			<form id='the_form'>
+				<label for='name'>First Name</label>
+				<input type='text' id='name' placeholder="My Name" autofocus>
+				<input class='btn-big-red' id="submit" type='submit' value='enter now'>
+			</form>
+		</div>
+		<footer>&copy; 2014</footer>
+	</div><!-- end .container -->
+</body>
+</html>
